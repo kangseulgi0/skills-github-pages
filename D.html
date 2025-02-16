@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="pageD">
+        <div class="small-img"></div> <!-- 小人图标 -->
+        <h1>页面 D</h1>
+        <div class="options">
+            <button class="option-btn" id="option1" onclick="navigate('E')">选项 1</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 页面D加载时，选项1增大，选项2隐藏
+        window.onload = function() {
+            document.getElementById('option1').style.fontSize = '60px'; // 增大选项1
+            document.getElementById('option1').style.padding = '40px 80px';
+            document.getElementById('option2').style.display = 'none'; // 隐藏选项2
+        }
+    </script>
+</body>
+</html>

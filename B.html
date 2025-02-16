@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面B</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="pageB">
+        <div class="small-img"></div> <!-- 小人图标 -->
+        <h1>页面 B</h1>
+        <div class="options">
+            <button class="option-btn" id="option1" onclick="navigate('E')">选项 1</button>
+            <button class="option-btn" id="option2" onclick="navigate('C')">选项 2</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 页面B加载时逐渐增大选项1，缩小选项2并向右移动
+        window.onload = function() {
+            document.getElementById('option1').style.fontSize = '30px';
+            document.getElementById('option1').style.padding = '25px 50px';
+            document.getElementById('option2').style.fontSize = '16px';
+            document.getElementById('option2').style.padding = '10px 20px';
+            document.getElementById('option2').style.position = 'relative'; // 使选项2可以移动
+
+            setTimeout(() => {
+                // 增大选项1
+                document.getElementById('option1').style.fontSize = '40px'; 
+                document.getElementById('option1').style.padding = '30px 60px';
+                // 缩小选项2并向右移动
+                document.getElementById('option2').style.fontSize = '10px'; 
+                document.getElementById('option2').style.padding = '5px 10px';
+                document.getElementById('option2').style.left = '50px'; // 向右移动50px
+            }, 1000); // 一秒后开始增大和缩小
+        }
+    </script>
+</body>
+</html>
